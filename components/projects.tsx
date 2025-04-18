@@ -38,12 +38,6 @@ const projects = [
     github: "https://github.com/Kanikashreesivakumar/HOPIN",
     
   },
-  {
-    title: "CHITCHAT AI BOT - Personalized voice assistent",
-    description: "A personalized voice assistant that can answer questions, provide information, and perform tasks using AI.", 
-    tech: ["Python", "openAI API","pyttsx3","speech recognition","Flask"],
-    github: "https://github.com/Kanikashreesivakumar/ChitChat-bot",
-  },
 ]
 
 export default function Projects() {

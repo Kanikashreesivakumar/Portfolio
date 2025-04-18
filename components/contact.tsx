@@ -296,7 +296,7 @@ function ResumeModal({ onClose }: { onClose: () => void }) {
         <div className="absolute -inset-0.5 bg-white rounded-xl blur-sm opacity-20"></div>
         <div className="relative h-full p-1">
           <div className="bg-black rounded-xl h-full overflow-hidden">
-            <iframe src="/placeholder.svg?height=1000&width=800" className="w-full h-full" title="Resume"></iframe>
+            <iframe src="/kaniresume.jpg?height=1000&width=800" className="w-full h-full" title="Resume"></iframe>
           </div>
 
           <button

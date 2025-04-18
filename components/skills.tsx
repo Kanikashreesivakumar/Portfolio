@@ -5,27 +5,8 @@ import { motion, useInView, useAnimation } from "framer-motion"
 import { Code, FileJson, Braces, Layers, Server, PenTool, Cpu, Wind } from "lucide-react"
 
 const skills = [
-  {
-    name: "React",
-    level: 95,
-    color: "from-gray-300 to-white",
-    icon: Layers,
-    description: "Building interactive UIs with component-based architecture",
-  },
-  {
-    name: "JavaScript",
-    level: 90,
-    color: "from-gray-300 to-white",
-    icon: Braces,
-    description: "Creating dynamic web applications with modern ES6+ features",
-  },
-  {
-    name: "TypeScript",
-    level: 85,
-    color: "from-gray-300 to-white",
-    icon: FileJson,
-    description: "Developing type-safe applications with enhanced tooling",
-  },
+  
+ 
   {
     name: "Next.js",
     level: 90,
@@ -39,34 +20,6 @@ const skills = [
     color: "from-gray-300 to-white",
     icon: PenTool,
     description: "backend framework for building web applications and APIs",
-  },
-  {
-    name: "Node.js",
-    level: 75,
-    color: "from-gray-300 to-white",
-    icon: Server,
-    description: "Developing scalable backend services and APIs",
-  },
-  {
-    name: "Python",
-    level: 70,
-    color: "from-gray-300 to-white",
-    icon: Cpu,
-    description: "Building data processing and automation solutions",
-  },
-  {
-    name: "Tailwind CSS",
-    level: 80,
-    color: "from-gray-300 to-white",
-    icon: Wind,
-    description: "Creating responsive, utility-first designs with minimal CSS",
-  },
-  {
-    name: "Tablueau",
-    level: 95,
-    color: "from-gray-300 to-white",
-    icon: FileJson,
-    description: "analyzing and presenting data in a clear and effective manner",
   },
   {
     name: "Figma",
@@ -98,6 +51,56 @@ const skills = [
     description: "Implementing machine learning algorithms and models",
   },
   {
+    name: "React",
+    level: 80,
+    color: "from-gray-300 to-white",
+    icon: Layers,
+    description: "Building interactive UIs with component-based architecture",
+  },
+  {
+    name: "Node.js",
+    level: 75,
+    color: "from-gray-300 to-white",
+    icon: Server,
+    description: "Developing scalable backend services and APIs",
+  },
+  {
+    name: "Python",
+    level: 70,
+    color: "from-gray-300 to-white",
+    icon: Cpu,
+    description: "Building data processing and automation solutions",
+  },
+  {
+    name: "JavaScript",
+    level: 90,
+    color: "from-gray-300 to-white",
+    icon: Braces,
+    description: "Creating dynamic web applications with modern ES6+ features",
+  },
+  {
+    name: "TypeScript",
+    level: 85,
+    color: "from-gray-300 to-white",
+    icon: FileJson,
+    description: "Developing type-safe applications with enhanced tooling",
+  },
+  {
+    name: "Tailwind CSS",
+    level: 80,
+    color: "from-gray-300 to-white",
+    icon: Wind,
+    description: "Creating responsive, utility-first designs with minimal CSS",
+  },
+  {
+    name: "Tablueau",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: FileJson,
+    description: "analyzing and presenting data in a clear and effective manner",
+  },
+  
+  {
     name: "Vercel",
     level: 95,
     color: "from-gray-300 to-white",
@@ -110,6 +113,13 @@ const skills = [
     color: "from-gray-300 to-white",
     icon: Cpu,
     description: "Utilizing AI tools for data analysis and automation",
+  },
+  {
+    name: "Supabase",
+    level: 90,
+    color: "from-gray-300 to-white",
+    icon: Server,
+    description: "Building real-time applications with PostgreSQL and authentication",
   },
 ]
 
