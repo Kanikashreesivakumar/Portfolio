@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Mail, FileText, X } from "lucide-react"
+import { Github, Linkedin, Mail, FileText, X, PhoneCall } from "lucide-react"
+import { useRouter } from 'next/navigation'
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -15,21 +16,42 @@ export default function Contact() {
   })
 
   const [showResume, setShowResume] = useState(false)
-  const [focusedInput, setFocusedInput] = useState(null)
+  const [focusedInput, setFocusedInput] = useState<string | null>(null)
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
     })
   }
 
-  const handleSubmit = (e) => {
+  interface FormState {
+    name: string
+    email: string
+    message: string
+  }
+
+  interface SubmitEvent extends React.FormEvent<HTMLFormElement> {}
+
+  const handleSubmit = async (e: SubmitEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formState)
-    // Here you would typically send the form data to your backend
-    alert("Thanks for your message! This is a demo, so no message was actually sent.")
+    
+    
+    const messageText = `
+      New Message from Portfolio:
+      Name: ${formState.name}
+      Email: ${formState.email}
+      Message: ${formState.message}
+    `
+  
+    const whatsappUrl = `https://wa.me/917418761589?text=${encodeURIComponent(messageText)}`
+    
+    window.open(whatsappUrl, '_blank')
+    
+    
     setFormState({ name: "", email: "", message: "" })
+    
+    alert("Message sent! Redirecting to WhatsApp...")
   }
 
   return (
@@ -40,7 +62,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
         >
           Contact Me
         </motion.h2>
@@ -163,7 +185,7 @@ export default function Contact() {
 
                 <div className="flex items-center mb-4">
                   <Mail className="h-5 w-5 text-white mr-4" />
-                  <span className="text-gray-300">hello@kanikashree.com</span>
+                  <span className="text-gray-300">kanikashreesivakumar16@gmail.com</span>
                 </div>
 
                 <div className="mt-8">
@@ -187,7 +209,7 @@ export default function Contact() {
 
                 <div className="flex space-x-4">
                   <motion.a
-                    href="#"
+                    href="https://github.com/Kanikashreesivakumar"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -199,7 +221,7 @@ export default function Contact() {
                   </motion.a>
 
                   <motion.a
-                    href="#"
+                    href="https://www.linkedin.com/in/kanikashree-sivakumar/"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -211,7 +233,9 @@ export default function Contact() {
                   </motion.a>
 
                   <motion.a
-                    href="#"
+                    href="mailto:Kanikashreesivakumar16@gmail.com"
+                    target="_blank"
+                     rel="noopener noreferrer"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -221,6 +245,19 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-white relative z-10" />
                     <div className="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 hover:opacity-100 transition-opacity"></div>
                   </motion.a>
+                  <motion.a
+            href="tel:+917418761589"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              y: -5,
+              boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
+            }}
+            className="w-12 h-12 rounded-full bg-black flex items-center justify-center border border-white/50 shadow-md transition-shadow relative"
+          >
+            <PhoneCall className="h-4 w-4 text-white relative z-10" />
+            <div className="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 hover:opacity-100 transition-opacity"></div>
+          </motion.a>
                 </div>
               </div>
 
@@ -239,7 +276,7 @@ export default function Contact() {
   )
 }
 
-function ResumeModal({ onClose }) {
+function ResumeModal({ onClose }: { onClose: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

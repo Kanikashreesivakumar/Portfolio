@@ -34,11 +34,11 @@ const skills = [
     description: "Building server-rendered React applications with optimized performance",
   },
   {
-    name: "Three.js",
+    name: "flask",
     level: 80,
     color: "from-gray-300 to-white",
     icon: PenTool,
-    description: "Creating immersive 3D experiences for the web",
+    description: "backend framework for building web applications and APIs",
   },
   {
     name: "Node.js",
@@ -56,10 +56,60 @@ const skills = [
   },
   {
     name: "Tailwind CSS",
-    level: 95,
+    level: 80,
     color: "from-gray-300 to-white",
     icon: Wind,
     description: "Creating responsive, utility-first designs with minimal CSS",
+  },
+  {
+    name: "Tablueau",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: FileJson,
+    description: "analyzing and presenting data in a clear and effective manner",
+  },
+  {
+    name: "Figma",
+    level: 90,
+    color: "from-gray-300 to-white",
+    icon: PenTool,
+    description: "Designing user interfaces and prototypes with collaborative tools",
+  },
+  {
+    name: "v0.dev",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: Layers,
+    description: "Building and deploying serverless applications with ease",
+  },
+  
+  {
+    name: "Git & GitHub",
+    level: 85,
+    color: "from-gray-300 to-white",
+    icon: Braces,
+    description: "Version control and collaboration for code management",
+  },
+  {
+    name: "AI & ML",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: Cpu,
+    description: "Implementing machine learning algorithms and models",
+  },
+  {
+    name: "Vercel",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: Layers,
+    description: "Deploying and hosting applications with serverless architecture",
+  },
+  {
+    name: "AI tools",
+    level: 95,
+    color: "from-gray-300 to-white",
+    icon: Cpu,
+    description: "Utilizing AI tools for data analysis and automation",
   },
 ]
 
@@ -80,7 +130,7 @@ export default function Skills() {
           Skills
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {skills.map((skill, index) => (
             <SkillItem key={index} skill={skill} index={index} />
           ))}
@@ -154,7 +204,15 @@ function AnimatedBackground() {
   )
 }
 
-function SkillItem({ skill, index }) {
+interface Skill {
+  name: string
+  level: number
+  color: string
+  icon: React.ComponentType<{ className?: string }>
+  description: string
+}
+
+function SkillItem({ skill, index }: { skill: Skill; index: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
@@ -250,7 +308,7 @@ function SkillItem({ skill, index }) {
   )
 }
 
-function BarSkill({ skill, controls }) {
+function BarSkill({ skill, controls }: { skill: Skill; controls: any }) {
   return (
     <div>
       <div className="h-3 w-full bg-gray-800 rounded-full overflow-hidden relative">
@@ -290,7 +348,7 @@ function BarSkill({ skill, controls }) {
   )
 }
 
-function CircleSkill({ skill, controls }) {
+function CircleSkill({ skill, controls }: { skill: Skill; controls: any }) {
   const circumference = 2 * Math.PI * 40
   const strokeDashoffset = circumference - (skill.level / 100) * circumference
 
@@ -326,7 +384,6 @@ function CircleSkill({ skill, controls }) {
           </defs>
         </svg>
 
-        {/* Glowing effect for the circle */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={controls}
@@ -353,7 +410,7 @@ function CircleSkill({ skill, controls }) {
   )
 }
 
-function HexagonSkill({ skill, controls }) {
+function HexagonSkill({ skill, controls }: { skill: Skill; controls: any }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-full h-4 bg-gray-800 rounded-full overflow-hidden mb-2">

@@ -5,22 +5,16 @@ import { useRef } from "react"
 
 const educationData = [
   {
-    degree: "Master of Science in Computer Science",
-    institution: "Tech University",
-    date: "2022-2024",
-    description: "Specialized in AI and Interactive Technologies",
+    degree: "Bachelor of technology in Artificial Intelligence and Data Science",
+    institution: "Excel engineering college || Affiliated to Anna University",
+    date: "2022-2026  (Currently in pre-final year)",
+    description: " Currently pursuing an honors degree with a CGPA of 86%, specializing in Machine Learning, Data Analytics, and AI-driven technologies — maintaining a clean academic record with no arrears",
   },
   {
-    degree: "Bachelor of Science in Software Engineering",
-    institution: "Digital Institute",
-    date: "2018-2022",
-    description: "Focus on Web Development and User Experience",
-  },
-  {
-    degree: "Certificate in Advanced Web Technologies",
-    institution: "Code Academy",
-    date: "2017-2018",
-    description: "Intensive program covering modern web frameworks",
+    degree: "Higher Secondary Education (HSC)",
+  institution: "Reliance Matric Higher Secondary School, Namakkal",
+  date: "2020–2022",
+  description: "Graduated with 86% marks, with a focus on Computer Science and Biology",
   },
 ]
 
@@ -42,12 +36,12 @@ export default function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
         >
-          Education
+          Academic Journey
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {educationData.map((item, index) => (
             <EducationCard key={index} item={item} index={index} />
           ))}
@@ -57,10 +51,10 @@ export default function Education() {
   )
 }
 
-function EducationCard({ item, index }) {
-  const cardRef = useRef(null)
+function EducationCard({ item, index }: { item: typeof educationData[number]; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null)
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return
 
     const card = cardRef.current

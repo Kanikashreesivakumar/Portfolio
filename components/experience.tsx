@@ -6,33 +6,33 @@ import { useRef } from "react"
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    duration: "2023 - Present",
+    title: " Python developer intern",
+    company: "NLC India Limited",
+    duration: "January 2024 ",
     responsibilities: [
-      "Led the development of interactive 3D web experiences using Three.js and WebGL",
-      "Architected and implemented component libraries with React and TypeScript",
-      "Optimized application performance and implemented CI/CD pipelines",
+      "Developed and maintained Python applications for data analysis and automation",
+      "Collaborated with cross-functional teams to gather requirements and deliver solutions",
+      "Implemented RESTful APIs and integrated with third-party services",
     ],
   },
   {
-    title: "UI/UX Developer",
-    company: "Creative Digital Agency",
-    duration: "2021 - 2023",
+    title: "Cloud computing intern",
+    company: "Tech Forge Solutions",
+    duration: "july-2024",
     responsibilities: [
-      "Designed and developed responsive web applications with modern frameworks",
-      "Created interactive prototypes and animations using GSAP and Framer Motion",
-      "Collaborated with designers to implement pixel-perfect interfaces",
+      "Assisted in deploying and managing cloud infrastructure on AWS",
+      "Worked on serverless architecture using AWS Lambda and API Gateway",
+      "Participated in cloud security assessments and best practices implementation",
     ],
   },
   {
-    title: "Web Developer",
-    company: "Startup Ventures",
-    duration: "2019 - 2021",
+    title: "Full Stack Developer intern",
+    company: "Auttonotech Solutions",
+    duration: "March 2025 - May 2025",
     responsibilities: [
       "Built and maintained client websites and web applications",
       "Implemented responsive designs and cross-browser compatibility",
-      "Integrated third-party APIs and services",
+      "Collaborated with designers and backend developers to deliver high-quality products",
     ],
   },
 ]
@@ -46,13 +46,13 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
         >
           Experience
         </motion.h2>
 
         <div className="relative">
-          {/* Timeline line */}
+        
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-white/70 via-white/50 to-white/30 rounded-full"></div>
 
           {experiences.map((exp, index) => (
@@ -64,10 +64,17 @@ export default function Experience() {
   )
 }
 
-function ExperienceItem({ experience, index }) {
-  const cardRef = useRef(null)
+interface Experience {
+  title: string
+  company: string
+  duration: string
+  responsibilities: string[]
+}
 
-  const handleMouseMove = (e) => {
+function ExperienceItem({ experience, index }: { experience: Experience; index: number }) {
+  const cardRef = useRef<HTMLDivElement | null>(null)
+
+  const handleMouseMove = (e: { clientX: number; clientY: number }) => {
     if (!cardRef.current) return
 
     const card = cardRef.current

@@ -6,33 +6,51 @@ import { Award, X } from "lucide-react"
 
 const certifications = [
   {
-    title: "Certified Frontend Developer",
-    issuer: "Tech Academy",
-    date: "March 2025",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Prepare data for exploration",
+    issuer: "Google via Coursera",
+    date: "February 2025",
+    image: "/prepare.png?height=400&width=600",
   },
   {
-    title: "Advanced React Specialist",
-    issuer: "React Masters",
-    date: "January 2025",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    title: "Three.js & WebGL Expert",
-    issuer: "3D Web Institute",
+    title: "Developing AI applications with python and flask",
+    issuer: "IBM via Coursera",
     date: "November 2024",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/flask.png?height=400&width=600",
   },
   {
-    title: "UI/UX Design Fundamentals",
-    issuer: "Design School",
-    date: "August 2024",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Google cloud foundamentals:Core infrastructure",
+    issuer: "Google via Coursera",
+    date: "November 2024",
+    image: "/cloud.png?height=400&width=600",
+  },
+  {
+    title: "Ask questions to make Data-Driven decisions",
+    issuer: "Google via Coursera",
+    date: "january 2025",
+    image: "/ask.png?height=400&width=600",
+  },
+  {
+    title: "Foundations: Data, Data, Everywhere",
+    issuer: "Google via Coursera",
+    date: "april 2025",
+    image: "/data.png?height=400&width=600",
+  },
+  {
+    title: "JAVA Programing",
+    issuer: "Great Learning Academy",
+    date: "OCtober 2024",
+    image: "/java.jpg?height=400&width=600",
+  },
+  {
+    title: "Getting started with Microsoft excel",
+    issuer: "Coursera project network",
+    date: "april 2025",
+    image: "/excel.png?height=400&width=600",
   },
 ]
 
 export default function Certifications() {
-  const [selectedCert, setSelectedCert] = useState(null)
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null)
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20">
@@ -42,7 +60,7 @@ export default function Certifications() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
         >
           Certifications
         </motion.h2>
@@ -61,10 +79,25 @@ export default function Certifications() {
   )
 }
 
-function CertificationCard({ certification, index, onClick }) {
-  const cardRef = useRef(null)
+type Certification = {
+  title: string
+  issuer: string
+  date: string
+  image: string
+}
 
-  const handleMouseMove = (e) => {
+function CertificationCard({
+  certification,
+  index,
+  onClick,
+}: {
+  certification: Certification
+  index: number
+  onClick: () => void
+}) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!cardRef.current) return
 
     const card = cardRef.current
@@ -95,7 +128,7 @@ function CertificationCard({ certification, index, onClick }) {
       className="relative cursor-pointer perspective"
       onClick={onClick}
     >
-      <div className="absolute -inset-0.5 bg-white rounded-xl blur-sm opacity-20"></div>
+      <div className="absolute -inset-0.5 bg-white rounded-xl blur-sm opacity-10"></div>
       <div
         ref={cardRef}
         className="relative bg-black rounded-xl p-6 flex flex-col items-center transform-style-3d"
@@ -125,7 +158,7 @@ function CertificationCard({ certification, index, onClick }) {
   )
 }
 
-function CertificationModal({ certification, onClose }) {
+function CertificationModal({ certification, onClose }: { certification: Certification; onClose: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -172,7 +205,7 @@ function CertificationModal({ certification, onClose }) {
           </div>
 
           <button
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
             onClick={onClose}
           >
             <X className="h-5 w-5" />

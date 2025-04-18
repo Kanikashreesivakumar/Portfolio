@@ -7,8 +7,11 @@ import { Github } from "lucide-react"
 export default function Hero() {
   const [text, setText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
-  const fullText = "Creative developer blending 3D, motion, and elegance into code."
-
+  
+  const fullText = `I craft smart solutions where design meets data, low-code meets logic, and AI sparks innovation.\n
+DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
+ 
+  
   useEffect(() => {
     let currentIndex = 0
     let interval: NodeJS.Timeout
@@ -48,7 +51,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-xl md:text-2xl mb-4 text-gray-300 font-light tracking-wide"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white">Welcome! I'm</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300  font-bold text-5xl to-white"> Welcome guys! </span>
         </motion.h2>
 
         <div className="overflow-hidden mb-6">
@@ -66,8 +69,8 @@ export default function Hero() {
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white glow-text">
                 K4ni'z
               </span>
-              <span className="absolute inset-0 z-0 blur-md bg-gradient-to-r from-gray-300/30 to-white/30 opacity-70 transform translate-y-1"></span>
-              <span className="absolute inset-0 z-0 blur-sm bg-gradient-to-r from-gray-300/20 to-white/20 opacity-50 transform -translate-y-1"></span>
+              <span className="absolute inset-0 z-0 blur-md bg-gradient-to-r from-gray-300/30 to-white/30 opacity-20 transform translate-y-1"></span>
+              <span className="absolute inset-0 z-0 blur-sm bg-gradient-to-r from-gray-300/20 to-white/20 opacity-30 transform -translate-y-1"></span>
             </span>
           </motion.h1>
         </div>
@@ -76,13 +79,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-lg md:text-xl mb-2 text-gray-300 font-light"
-        >
-          Kanikashree Sivakumar
+          className="text-lg md:text-3xl font-bold mb-2 text-gray-300 ">
+         Here Kanikashree Sivakumar
         </motion.h3>
 
         <div className="h-20 mt-8">
-          <p className="text-lg text-gray-300 font-light">
+          <p className="text-xl text-gray-300 font-bold whitespace-pre-line">
             {text}
             <span className={`inline-block w-2 h-5 ml-1 bg-white ${showCursor ? "opacity-100" : "opacity-0"}`}></span>
           </p>
@@ -95,7 +97,7 @@ export default function Hero() {
           className="mt-8"
         >
           <a
-            href="https://github.com/k4niz"
+            href="https://github.com/Kanikashreesivakumar"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black border border-white/30 hover:border-white/80 transition-all group relative overflow-hidden"

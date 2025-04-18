@@ -11,15 +11,21 @@ const services = [
     icon: Code,
   },
   {
+    title: " AI & Machine Learning",
+    description: "Building intelligent applications using AI and machine learning algorithms",
+    icon: Layers,
+  },
+  {
+    title: "AI inspiring technologist",
+    description: "Leveraging AI to enhance user experiences and drive innovation",
+    icon: Layers,
+  },
+  {
     title: "UI/UX Design",
     description: "Designing intuitive and visually appealing user interfaces",
     icon: Palette,
   },
-  {
-    title: "3D Web Experiences",
-    description: "Building immersive 3D experiences for the web using Three.js",
-    icon: Layers,
-  },
+ 
   {
     title: "Full-Stack Solutions",
     description: "End-to-end development from frontend to backend",
@@ -36,12 +42,12 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
         >
           Services
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
@@ -51,10 +57,16 @@ export default function Services() {
   )
 }
 
-function ServiceCard({ service, index }) {
-  const cardRef = useRef(null)
+interface Service {
+  title: string
+  description: string
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
 
-  const handleMouseMove = (e) => {
+function ServiceCard({ service, index }: { service: Service; index: number }) {
+  const cardRef = useRef<HTMLDivElement | null>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return
 
     const card = cardRef.current

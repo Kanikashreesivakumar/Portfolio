@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Heart, PhoneCallIcon } from "lucide-react"
 import { useRef } from "react"
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
 
         <div className="flex space-x-4 mb-6">
           <motion.a
-            href="#"
+            href="https://github.com/Kanikashreesivakumar"
             whileHover={{
               y: -5,
               boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -37,7 +37,7 @@ export default function Footer() {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/kanikashree-sivakumar/"
             whileHover={{
               y: -5,
               boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -49,7 +49,9 @@ export default function Footer() {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="mailto:kanikashreesivakumar16@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{
               y: -5,
               boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
@@ -59,15 +61,28 @@ export default function Footer() {
             <Mail className="h-4 w-4 text-white relative z-10" />
             <div className="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 hover:opacity-100 transition-opacity"></div>
           </motion.a>
+          <motion.a
+            href="tel:+917418761589"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              y: -5,
+              boxShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
+            }}
+            className="w-10 h-10 rounded-full bg-black flex items-center justify-center border border-white/50 shadow-md transition-shadow relative"
+          >
+            <PhoneCallIcon className="h-4 w-4 text-white relative z-10" />
+            <div className="absolute inset-0 rounded-full bg-white blur-md opacity-0 hover:opacity-100 transition-opacity"></div>
+          </motion.a>
         </div>
 
-        <p className="text-gray-500 text-sm text-center">
+        <p className="text-white text-sm text-center">
           © {new Date().getFullYear()} Kanikashree Sivakumar. All rights reserved.
         </p>
 
         <div className="mt-4 relative">
           <div className="absolute -inset-0.5 bg-white/30 rounded-full blur-sm opacity-20"></div>
-          <p className="relative bg-black px-4 py-2 rounded-full text-gray-400 text-sm italic">
+          <p className="relative bg-black px-4 py-2 rounded-full text-white text-sm italic">
             "Turning imagination into immersive digital experiences"
           </p>
         </div>

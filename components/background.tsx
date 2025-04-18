@@ -11,7 +11,7 @@ function SpaceEnvironment() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalize mouse position to range [-1, 1]
+     
       setMousePosition({
         x: (e.clientX / window.innerWidth) * 2 - 1,
         y: -(e.clientY / window.innerHeight) * 2 + 1,
@@ -154,12 +154,12 @@ function Hand() {
 
   useFrame(({ clock }) => {
     if (handRef.current) {
-      // Base rotation
+  
       const t = clock.getElapsedTime()
       handRef.current.rotation.y = Math.sin(t * 0.2) * 0.2
       handRef.current.rotation.z = Math.sin(t * 0.1) * 0.1
 
-      // Subtle movement based on mouse position
+   
       handRef.current.rotation.x = mousePosition.y * 0.1
       handRef.current.rotation.y += mousePosition.x * 0.1
     }
@@ -168,19 +168,9 @@ function Hand() {
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
       <group ref={handRef} position={[0, -1, 0]} scale={[0.8, 0.8, 0.8]}>
-        {/* Stylized hand representation */}
-        <mesh position={[0, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.1, 0.1, 1.5, 32]} />
-          <meshStandardMaterial color="white" metalness={0.5} roughness={0.2} />
-        </mesh>
-
-        {/* Fingers */}
-        {[0, 1, 2, 3, 4].map((i) => (
-          <mesh key={i} position={[0.5 - i * 0.25, 0.5, 0]} rotation={[0, 0, Math.PI / 4]}>
-            <cylinderGeometry args={[0.05, 0.05, 0.7, 32]} />
-            <meshStandardMaterial color="white" metalness={0.5} roughness={0.2} />
-          </mesh>
-        ))}
+      
+       
+      
       </group>
     </Float>
   )
@@ -193,7 +183,7 @@ function Particles() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalize mouse position to range [-1, 1]
+      
       setMousePosition({
         x: (e.clientX / window.innerWidth) * 2 - 1,
         y: -(e.clientY / window.innerHeight) * 2 + 1,
@@ -264,14 +254,22 @@ function Particles() {
           count={particleCount}
           array={particlesPosition.positions}
           itemSize={3}
+          args={[particlesPosition.positions, 3]}
         />
         <bufferAttribute
           attach="attributes-color"
           count={particleCount}
           array={particlesPosition.colors}
           itemSize={3}
+          args={[particlesPosition.positions, 3]}
         />
-        <bufferAttribute attach="attributes-size" count={particleCount} array={particlesPosition.sizes} itemSize={1} />
+        <bufferAttribute
+          attach="attributes-size"
+          count={particleCount}
+          array={particlesPosition.sizes}
+          itemSize={1}
+          args={[particlesPosition.positions, 3]}
+        />
       </bufferGeometry>
       <pointsMaterial
         size={0.15}

@@ -7,36 +7,42 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "Elegant 3D Gallery",
-    description: "An interactive 3D art gallery built with Three.js and React Three Fiber.",
-    image: "/placeholder.svg?height=400&width=600",
-    tech: ["React", "Three.js", "GSAP"],
-    github: "https://github.com/k4niz",
-    live: "#",
+    title: "MINDSCRIBE -AI driven Thoughts to Text System",
+    description: "A futuristic EEG prototype converting human Thoughts into Text",
+    image: "/mind.png?height=400&width=600",
+    tech: ["Next.js", "TailwindCSS", "NLP","Deepseek API","Supabase","vercel"],
+    github: "https://github.com/Kanikashreesivakumar/mindscribe",
+    live: "https://mindscribe-orpin.vercel.app/",
   },
   {
-    title: "AI Content Platform",
-    description: "A web application that uses AI to generate creative content for various purposes.",
-    image: "/placeholder.svg?height=400&width=600",
-    tech: ["Next.js", "OpenAI API", "Tailwind CSS"],
-    github: "https://github.com/k4niz",
-    live: "#",
+    title: "RECAUVA - physiotherapy platform",
+    description: "Developed a webiste for localized physio appointment system with live seesion bookings and patient-therapist interaction",
+    image: "/recauva.png?height=400&width=600",
+    tech: ["Typescript", "mongodb", "Tailwind CSS","React","Vercel"],
+    github: "https://github.com/Kanikashreesivakumar/Recauva",
+    live: "https://www.recauva.com/",
   },
   {
-    title: "Investment Dashboard",
-    description: "Real-time investment dashboard with interactive charts and portfolio tracking.",
-    image: "/placeholder.svg?height=400&width=600",
-    tech: ["React", "D3.js", "Firebase"],
-    github: "https://github.com/k4niz",
-    live: "#",
+    title: "AUTTONOTECH - Corporate website",
+    description: "Developed a corporate website for Auttonotech Solutions with a focus on user experience and modern design.",
+    image: "/auttono.png?height=400&width=600",
+    tech: ["Supabase", "TailwindCSS", "Next.js","Vercel"],
+    github: "https://github.com/Kanikashreesivakumar/auttonotech",
+    live: "https://auttonotech-rose.vercel.app/",
   },
   {
-    title: "Virtual Reality Experience",
-    description: "A VR experience for real estate showcasing with immersive interactions.",
-    image: "/placeholder.svg?height=400&width=600",
-    tech: ["A-Frame", "JavaScript", "WebXR"],
-    github: "https://github.com/k4niz",
-    live: "#",
+    title: "HOPIN - AI Driven Real time campus event ride sharing",
+    description: "AI-based ride matching system with seat booking, cost splitting and real time location tracking for campus events",
+    image: "/hop.png?height=400&width=600",
+    tech: ["Next.js", "TailwindCSS", "Mongodb","Google map API","Vercel"],
+    github: "https://github.com/Kanikashreesivakumar/HOPIN",
+    
+  },
+  {
+    title: "CHITCHAT AI BOT - Personalized voice assistent",
+    description: "A personalized voice assistant that can answer questions, provide information, and perform tasks using AI.", 
+    tech: ["Python", "openAI API","pyttsx3","speech recognition","Flask"],
+    github: "https://github.com/Kanikashreesivakumar/ChitChat-bot",
   },
 ]
 
@@ -49,7 +55,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading glow-text"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading glow-text"
         >
           Projects
         </motion.h2>
@@ -64,10 +70,19 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ project, index }) {
-  const cardRef = useRef(null)
+interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  tech: string[];
+  github: string;
+  live?: string;
+}
 
-  const handleMouseMove = (e) => {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cardRef = useRef<HTMLDivElement | null>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!cardRef.current) return
 
     const card = cardRef.current

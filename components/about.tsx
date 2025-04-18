@@ -21,9 +21,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading"
+          className="text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-heading text-glow"
         >
-          About Me
+          The Person Behind the Pixels
         </motion.h2>
 
         <motion.div
@@ -52,10 +52,7 @@ export default function About() {
 
             <div className="relative z-10">
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                I'm a creative developer with a passion for crafting elegant digital experiences. With expertise in
-                frontend development and 3D web technologies, I create interactive applications that blend aesthetics
-                with functionality. My approach combines technical precision with creative vision to deliver solutions
-                that exceed expectations.
+              I'm a creative Aspiring AI Developer, passionate about transforming bold ideas into intelligent, elegant digital experiences. As an Artificial Intelligence and Data Science (AIDS) student, I specialize in blending low-code development, human-centered UI/UX design, and data-driven storytelling with the evolving power of AI. From crafting seamless interfaces to decoding complex data patterns and building adaptive, smart applications — I thrive at the crossroads of creativity, technology, and machine intelligence. My approach is driven by curiosity and purpose: to design experiences that not only function but truly connect and inspire. Always learning, always innovating — I’m here to shape the future, one intelligent interaction at a time.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
