@@ -94,7 +94,7 @@ DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-8"
+          className="mt-24"
         >
           <a
             href="https://github.com/Kanikashreesivakumar"
@@ -109,7 +109,7 @@ DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
         </motion.div>
       </motion.div>
 
-      {/* Animated gradient lines */}
+     
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <motion.div

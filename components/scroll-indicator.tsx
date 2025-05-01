@@ -4,12 +4,23 @@ import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 
 export default function ScrollIndicator() {
+  const scrollToNext = () => {
+    const nextSection = document.querySelector('.snap-start:nth-child(2)')
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+    <div 
+      className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer"
+      onClick={scrollToNext}
+      onMouseEnter={scrollToNext}
+    >
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
-        className="relative"
+        className="relative hover:scale-110 transition-transform"
       >
         <div className="absolute inset-0 rounded-full bg-white blur-md opacity-50"></div>
         <ChevronDown className="h-8 w-8 text-white relative z-10" />

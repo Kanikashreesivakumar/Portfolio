@@ -29,7 +29,7 @@ const skills = [
     description: "Designing user interfaces and prototypes with collaborative tools",
   },
   {
-    name: "v0.dev",
+    name: "v0.dev and other AI tools",
     level: 95,
     color: "from-gray-300 to-white",
     icon: Layers,
@@ -57,13 +57,7 @@ const skills = [
     icon: Layers,
     description: "Building interactive UIs with component-based architecture",
   },
-  {
-    name: "Node.js",
-    level: 75,
-    color: "from-gray-300 to-white",
-    icon: Server,
-    description: "Developing scalable backend services and APIs",
-  },
+ 
   {
     name: "Python",
     level: 70,
@@ -107,13 +101,7 @@ const skills = [
     icon: Layers,
     description: "Deploying and hosting applications with serverless architecture",
   },
-  {
-    name: "AI tools",
-    level: 95,
-    color: "from-gray-300 to-white",
-    icon: Cpu,
-    description: "Utilizing AI tools for data analysis and automation",
-  },
+
   {
     name: "Supabase",
     level: 90,
@@ -126,7 +114,7 @@ const skills = [
 export default function Skills() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      {/* Animated background */}
+     
       <AnimatedBackground />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -153,7 +141,7 @@ export default function Skills() {
 function AnimatedBackground() {
   return (
     <div className="absolute inset-0 z-0 opacity-20">
-      {/* Grid lines */}
+      
       <div className="absolute inset-0 grid grid-cols-12 gap-4">
         {Array.from({ length: 12 }).map((_, i) => (
           <div key={`col-${i}`} className="h-full w-px bg-white/10"></div>
@@ -165,7 +153,7 @@ function AnimatedBackground() {
         ))}
       </div>
 
-      {/* Animated circles */}
+     
       {Array.from({ length: 10 }).map((_, i) => (
         <motion.div
           key={`circle-${i}`}

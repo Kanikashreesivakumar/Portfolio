@@ -34,7 +34,7 @@ const projects = [
     title: "HOPIN - AI Driven Real time campus event ride sharing",
     description: "AI-based ride matching system with seat booking, cost splitting and real time location tracking for campus events",
     image: "/hop.png?height=400&width=600",
-    tech: ["Next.js", "TailwindCSS", "Mongodb","Google map API","Vercel"],
+    tech: ["Next.js", "TailwindCSS", "Mongodb","Google map API","Vercel","three.js"],
     github: "https://github.com/Kanikashreesivakumar/HOPIN",
     
   },
