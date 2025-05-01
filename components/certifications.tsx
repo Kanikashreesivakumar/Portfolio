@@ -5,6 +5,13 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Award, X } from "lucide-react"
 
 const certifications = [
+  
+  {
+    title: "Generative AI: introduction and applications",
+    issuer: "IBM via Coursera",
+    date: "April 2025",
+    image: "/ai.jpg?height=400&width=600",
+  },
   {
     title: "Prepare data for exploration",
     issuer: "Google via Coursera",
