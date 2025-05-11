@@ -3,7 +3,10 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'K4NIz',
-  generator: 'kanikashree sivakumar',
+  description: 'Portfolio website showcasing my work and skills',
+  icons: {
+    icon: '/logo.jpeg', 
+  },
 }
 
 export default function RootLayout({
