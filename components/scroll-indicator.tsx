@@ -20,7 +20,7 @@ export default function ScrollIndicator() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
-        className="relative hover:scale-110 transition-transform"
+        className="relative hover:scale-110 transition-transform flex flex-column justify-center"
       >
         <div className="absolute inset-0 rounded-full bg-white blur-md opacity-50"></div>
         <ChevronDown className="h-8 w-8 text-white relative z-10" />

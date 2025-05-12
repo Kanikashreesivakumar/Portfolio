@@ -36,7 +36,7 @@ const projects = [
     image: "/hop.png?height=400&width=600",
     tech: ["Next.js", "TailwindCSS", "Mongodb","Google map API","Vercel","three.js"],
     github: "https://github.com/Kanikashreesivakumar/HOPIN",
-    live: "https://stalwart-smakager-005aaf.netlify.app/"
+    live: "https://stalwart-smakager-005aaf.netlify.app/",
     
   },
 ]
