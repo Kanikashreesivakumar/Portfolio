@@ -6,6 +6,17 @@ import { useRef } from "react"
 
 const experiences = [
   {
+    title:"AIoT innovation intern",
+    company: "Renault Nissan automotive india pvt ltd",
+    duration: "june 2025 to july 2025",
+    responsibilities: [
+          "Developed and implemented AIoT-based solutions to enhance automation and quality assurance in automotive manufacturing.",
+    "Integrated ArUco marker-based computer vision systems to automate component alignment and precision tracking within production lines.",
+    "Designed and deployed 'KitKart' – a smart logistics and kit management system to optimize real-time inventory flow and part handling.",
+    "Contributed to 'CanCap' – an AI-powered defect detection and cap misalignment recognition system using edge computing and image processing.",
+    ]
+  },
+  {
     title: " Python developer intern",
     company: "NLC India Limited",
     duration: "January 2024 ",
@@ -152,7 +163,6 @@ function ExperienceItem({ experience, index }: { experience: Experience; index: 
             ))}
           </ul>
 
-          {/* Glowing corners */}
           <div className="absolute top-0 left-0 w-2 h-2 bg-white rounded-tl-xl blur-sm"></div>
           <div className="absolute top-0 right-0 w-2 h-2 bg-white rounded-tr-xl blur-sm"></div>
           <div className="absolute bottom-0 left-0 w-2 h-2 bg-white rounded-bl-xl blur-sm"></div>
