@@ -6,7 +6,7 @@ import { useRef } from "react"
 
 const experiences = [
   {
-    title:"AIoT innovation intern",
+    title:"AIoT(AI+IoT) innovation intern",
     company: "Renault Nissan automotive india pvt ltd",
     duration: "june 2025 to july 2025",
     responsibilities: [
