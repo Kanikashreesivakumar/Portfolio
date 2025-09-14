@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
+    title: "ARUCO -SEQUENCE MONITORING SYSTEM",
+    description: "AIOT integrated sequence monitoring system used in screw sequence in the gear assembling unit in car manufacturing industries.",
+    image: "/mind.png?height=400&width=600",
+    tech: ["HTML,CSS,JS", "IOT","AI"],
+    github: "https://github.com/Kanikashreesivakumar/design",
+   
+  },
+  {
     title: "KITKART -TROLLEY MAINTENANCE SYSTEM",
     description: "AIOT integrated trolley maintenance system in car manufacturing plants",
     image: "/mind.png?height=400&width=600",
