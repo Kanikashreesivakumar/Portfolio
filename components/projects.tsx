@@ -17,7 +17,7 @@ const projects = [
   {
     title: "KITKART -TROLLEY MAINTENANCE SYSTEM",
     description: "AIOT integrated trolley maintenance system in car manufacturing plants",
-    image: "/mind.png?height=400&width=600",
+    image: "/rna.png?height=400&width=600",
     tech: ["HTML,CSS,JS", "IOT","AI"],
     github: "https://github.com/Kanikashreesivakumar/design",
    
