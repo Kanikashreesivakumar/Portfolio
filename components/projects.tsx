@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "MINDSCRIBE -AI driven Thoughts to Text System",
-    description: "A futuristic EEG prototype converting human Thoughts into Text",
+    title: "KITKART -TROLLEY MAINTENANCE SYSTEM",
+    description: "AIOT integrated trolley maintenance system in car manufacturing plants",
     image: "/mind.png?height=400&width=600",
-    tech: ["Next.js", "TailwindCSS", "NLP","Deepseek API","Supabase","vercel"],
-    github: "https://github.com/Kanikashreesivakumar/mindscribe",
-    live: "https://mindscribe-orpin.vercel.app/",
+    tech: ["HTML,CSS,JS", "IOT","AI"],
+    github: "https://github.com/Kanikashreesivakumar/design",
+   
   },
   {
     title: "MINDSCRIBE -AI driven Thoughts to Text System",
