@@ -15,6 +15,14 @@ const projects = [
     live: "https://mindscribe-orpin.vercel.app/",
   },
   {
+    title: "MINDSCRIBE -AI driven Thoughts to Text System",
+    description: "A futuristic EEG prototype converting human Thoughts into Text",
+    image: "/mind.png?height=400&width=600",
+    tech: ["Next.js", "TailwindCSS", "NLP","Deepseek API","Supabase","vercel"],
+    github: "https://github.com/Kanikashreesivakumar/mindscribe",
+    live: "https://mindscribe-orpin.vercel.app/",
+  },
+  {
     title: "RECAUVA - physiotherapy platform",
     description: "Developed a webiste for localized physio appointment system with live seesion bookings and patient-therapist interaction",
     image: "/recauva.png?height=400&width=600",
