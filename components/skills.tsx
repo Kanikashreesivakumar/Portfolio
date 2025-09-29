@@ -115,22 +115,30 @@ export default function Skills() {
   const [current, setCurrent] = useState(0)
   const controls = useAnimation()
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const cardsPerView = 2
+  const totalPages = Math.ceil(skills.length / cardsPerView)
+  const currentPage = Math.floor(current / cardsPerView)
 
   useEffect(() => {
     controls.start("visible")
     intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % skills.length)
-    }, 2500) // Change skill every 2.5 seconds
-
+      setCurrent((prev) => (prev + cardsPerView) % skills.length)
+    }, 2500)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
   }, [controls])
 
+  // Get the two skills to show
+  const visibleSkills = [
+    skills[current],
+    skills[(current + 1) % skills.length],
+  ]
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
       <AnimatedBackground />
-      <div className="max-w-xl mx-auto relative z-10">
+      <div className="max-w-3xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,14 +148,18 @@ export default function Skills() {
         >
           Skills
         </motion.h2>
-        <SkillItem skill={skills[current]} index={current} controls={controls} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {visibleSkills.map((skill, idx) => (
+            <SkillItem key={current + idx} skill={skill} index={current + idx} controls={controls} />
+          ))}
+        </div>
         <div className="flex justify-center mt-6 space-x-2">
-          {skills.map((_, idx) => (
+          {Array.from({ length: totalPages }).map((_, idx) => (
             <button
               key={idx}
-              className={`w-3 h-3 rounded-full ${idx === current ? "bg-white" : "bg-gray-500"}`}
-              onClick={() => setCurrent(idx)}
-              aria-label={`Go to skill ${idx + 1}`}
+              className={`w-3 h-3 rounded-full ${idx === currentPage ? "bg-white" : "bg-gray-500"}`}
+              onClick={() => setCurrent(idx * cardsPerView)}
+              aria-label={`Go to skill page ${idx + 1}`}
             />
           ))}
         </div>
