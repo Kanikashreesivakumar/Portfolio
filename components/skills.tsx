@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { motion, useInView, useAnimation } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
 import { Code, FileJson, Braces, Layers, Server, PenTool, Cpu, Wind } from "lucide-react"
 
 const skills = [
@@ -112,12 +112,25 @@ const skills = [
 ]
 
 export default function Skills() {
+  const [current, setCurrent] = useState(0)
+  const controls = useAnimation()
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    controls.start("visible")
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % skills.length)
+    }, 2500) // Change skill every 2.5 seconds
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [controls])
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-     
       <AnimatedBackground />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,10 +140,15 @@ export default function Skills() {
         >
           Skills
         </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {skills.map((skill, index) => (
-            <SkillItem key={index} skill={skill} index={index} />
+        <SkillItem skill={skills[current]} index={current} controls={controls} />
+        <div className="flex justify-center mt-6 space-x-2">
+          {skills.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-3 h-3 rounded-full ${idx === current ? "bg-white" : "bg-gray-500"}`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Go to skill ${idx + 1}`}
+            />
           ))}
         </div>
       </div>
@@ -210,10 +228,9 @@ interface Skill {
   description: string
 }
 
-function SkillItem({ skill, index }: { skill: Skill; index: number }) {
+function SkillItem({ skill, index, controls }: { skill: Skill; index: number; controls: any }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const controls = useAnimation()
   const iconControls = useAnimation()
 
   useEffect(() => {
