@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "ARUCO -SEQUENCE MONITORING SYSTEM",
-    description: "AIOT integrated sequence monitoring system used in screw sequence in the gear assembling unit in car manufacturing industries.",
-    image: "/mind.png?height=400&width=600",
-    tech: ["HTML,CSS,JS", "IOT","AI"],
-    github: "https://github.com/Kanikashreesivakumar/design",
-   
+    title: "ASKSCHEMA - Intelligent Benefit Recommendation System",
+    description:
+      "Built AskScheme, an AI-powered advisory platform using ChromaDB vector storage, LangChain, and RAG to deliver personalized government scheme recommendations.",
+    image: "/askschema.jpeg?height=400&width=600",
+    tech: ["ChromaDB", "LangChain", "RAG", "Vector Search", "AI"],
+    github: "https://nxt-wave-buildathon.vercel.app/login",
+    live: "https://nxt-wave-buildathon.vercel.app/login",
   },
   {
     title: "KITKART -TROLLEY MAINTENANCE SYSTEM",
