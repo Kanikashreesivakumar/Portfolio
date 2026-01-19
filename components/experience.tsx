@@ -6,6 +6,18 @@ import { useRef } from "react"
 
 const experiences = [
   {
+    title:"Website Developer",
+    company: "Ts-Techy",
+    duration: "Aug 2025 to Jan 2026",
+    responsibilities: [
+  "Developed and maintained enterprise-level websites with responsive UI and structured layouts.",
+  "Built eCommerce features for multiple product categories including farm products, property listings, and mart items.",
+  "Integrated secure authentication and user role management for admin and customer access.",
+  "Implemented payment gateway integration and ensured smooth checkout and transaction flow."
+]
+
+  },
+  {
     title:"AIoT(AI+IoT) innovation intern",
     company: "Renault Nissan automotive india pvt ltd",
     duration: "june 2025 to july 2025",
