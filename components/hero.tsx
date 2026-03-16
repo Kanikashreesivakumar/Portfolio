@@ -43,20 +43,22 @@ DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="text-center z-10 max-w-4xl"
+        className="text-center z-10 max-w-4xl flex flex-col items-center gap-6"
       >
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-xl md:text-2xl mb-4 text-gray-300 font-light tracking-wide"
+          className="text-lg sm:text-xl md:text-2xl mb-4 text-gray-300 font-light tracking-wide"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300  font-bold text-5xl to-white"> Welcome guys! </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-bold text-3xl sm:text-4xl md:text-5xl">
+            Welcome guys!
+          </span>
         </motion.h2>
 
-        <div className="overflow-hidden mb-6">
+        <div className="overflow-hidden">
           <motion.h1
-            className="text-6xl md:text-8xl font-bold tracking-tight font-heading"
+            className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight font-heading"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{
@@ -79,12 +81,13 @@ DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-lg md:text-3xl font-bold mb-2 text-gray-300 ">
-         Here Kanikashree Sivakumar
+          className="text-base sm:text-lg md:text-3xl font-bold mb-2 text-gray-300"
+        >
+          Here Kanikashree Sivakumar
         </motion.h3>
 
-        <div className="h-20 mt-8">
-          <p className="text-xl text-gray-300 font-bold whitespace-pre-line">
+        <div className="min-h-[8rem] sm:min-h-[6rem]">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 font-bold whitespace-pre-line leading-relaxed">
             {text}
             <span className={`inline-block w-2 h-5 ml-1 bg-white ${showCursor ? "opacity-100" : "opacity-0"}`}></span>
           </p>
@@ -94,13 +97,13 @@ DEVELOPER || DATA ANALYST || AI TECHNOLOGIST || UI&UX DESIGNER`
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-24"
+          className="mt-4 sm:mt-8 md:mt-16 w-full flex justify-center"
         >
           <a
             href="https://github.com/Kanikashreesivakumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black border border-white/30 hover:border-white/80 transition-all group relative overflow-hidden"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black border border-white/30 hover:border-white/80 transition-all group relative overflow-hidden w-full max-w-[240px] sm:w-auto"
           >
             <span className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300"></span>
             <Github className="mr-2 h-5 w-5 text-white" />
