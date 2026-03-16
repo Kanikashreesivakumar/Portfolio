@@ -5,9 +5,9 @@ import { useRef } from "react"
 
 const educationData = [
   {
-    degree: "Bachelor of technology in Artificial Intelligence and Data Science",
+    degree: "Hons B.Tech (Artificial Intelligence and Data Science)",
     institution: "Excel engineering college || Affiliated to Anna University",
-    date: "2022-2026  (Currently in pre-final year)",
+    date: "2022-2026",
     description: " Currently pursuing an honors degree with a CGPA of 86%, specializing in Machine Learning, Data Analytics, and AI-driven technologies — maintaining a clean academic record with no arrears",
   },
   {
